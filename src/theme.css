@@ -1,0 +1,53 @@
+/**
+ * Theme: The light of the Emperor
+ * Default mode: light
+ * Created with andoni.dev Theme Builder
+ */
+
+:root {
+  /* Surfaces */
+  --surface-100: #ffffff;
+  --surface-200: #f8f9fa;
+  --surface-300: #f1f3f5;
+
+  /* Content */
+  --content: #212529;
+  --emphasis: #3b82f6;
+
+  /* Borders */
+  --border: #dee2e6;
+  --focus: #3b82f6;
+
+  /* Gradients */
+  --gradient-100: #ff6b6b;
+  --gradient-200: #845ef7;
+  --gradient-300: #339af0;
+
+  /* Main colors */
+  --primary: #3b82f6;
+  --primary-content: #ffffff;
+  --accent: #ec4899;
+  --accent-content: #ffffff;
+  --neutral: #64748b;
+  --neutral-content: #ffffff;
+
+  /* Feedback */
+  --info: #0ea5e9;
+  --info-content: #ffffff;
+  --success: #22c55e;
+  --success-content: #ffffff;
+  --warning: #f59e0b;
+  --warning-content: #ffffff;
+  --error: #ef4444;
+  --error-content: #ffffff;
+
+  /* Radius */
+  --radius-small: 0.25rem;
+  --radius-medium: 0.5rem;
+  --radius-large: 1rem;
+
+  /* Shadows */
+  --shadow-small: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+}
