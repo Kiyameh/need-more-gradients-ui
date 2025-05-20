@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PackageLinks from '../components/PackageLinks/PackageLinks'
+import {
+  StickyButton,
+  SpotlightButton,
+  GradientButton,
+} from 'need-more-gradients-ui'
+---
+
+<Layout>
+  <h1 class="honk">Need More Gradients UI</h1>
+  <p>This is a demo of the Need More Gradients UI library.</p>
+  <PackageLinks
+    client:load
+    npmUrl="https://www.npmjs.com/package/need-more-gradients-ui"
+    githubUrl="https://github.com/kiyameh/need-more-gradients-ui"
+    packageName="need-more-gradients-ui"
+  />
+  <div class="component-box">
+    <h2>Buttons</h2>
+
+    <StickyButton client:load>Sticky Button</StickyButton>
+    <SpotlightButton client:load>Spotlight Button</SpotlightButton>
+    <SpotlightButton
+      client:load
+      primary
+      >Primary Spotlight Button</SpotlightButton
+    >
+    <GradientButton client:load>Gradient Button</GradientButton>
+    <GradientButton
+      client:load
+      primary
+      >Primary Gradient Button</GradientButton
+    >
+  </div>
+</Layout>
+
+<style>
+  .component-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

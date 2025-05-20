@@ -1,6 +1,7 @@
-import type {CommonComponentProps} from './more-gradients.types'
+import React from 'react'
 import {useState, useMemo} from 'react'
 import type {CSSProperties} from 'react'
+import type {CommonComponentProps} from '../types/types'
 
 type SpotlightCallToActionProps =
   React.ButtonHTMLAttributes<HTMLButtonElement> &

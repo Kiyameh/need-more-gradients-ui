@@ -1,5 +1,6 @@
-import type {CommonComponentProps} from './more-gradients.types'
+import React from 'react'
 import {useState, useRef} from 'react'
+import type {CommonComponentProps} from '../types/types'
 
 type StickyCardProps = React.HTMLAttributes<HTMLDivElement> &
   CommonComponentProps

@@ -1,7 +1,40 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import pkg from './package.json' with {type: 'json'};
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import dts from 'vite-plugin-dts'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    // Plugin to inject CSS into the library
+    libInjectCss(),
+    // Plugin to generate TypeScript declaration files 
+    dts({ 
+      tsconfigPath: './tsconfig.json', 
+      exclude: ['demo','public','node_modules'],
+      include: ['./src/**/*.d.ts', './src/**/*.tsx', './src/types/types.ts'],
+    })
+  ],
+  build: {
+    lib: {
+      // Entry point for the library
+      entry: resolve(__dirname, 'src/index.tsx'),
+      // Name of the library
+      name: 'index',
+      // Output file name
+      fileName: 'index',
+    },
+    rollupOptions: {
+      // External dependencies that should not be bundled
+      external: [...Object.keys(pkg.peerDependencies)],
+      // Output configuration
+      output: {
+        // Global variable names for external dependencies
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },     
+    },
+  },
 })
